@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?validation-md5-digest 6fdd97f68634cb5b8ff1ba0305acfd4b?>
+<?validation-md5-digest ffc55627943104d8d3465c9536e73b93?>
 <worksheet version="3.0.3" xmlns="http://schemas.mathsoft.com/worksheet30" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ws="http://schemas.mathsoft.com/worksheet30" xmlns:ml="http://schemas.mathsoft.com/math30" xmlns:u="http://schemas.mathsoft.com/units10" xmlns:p="http://schemas.mathsoft.com/provenance10">
 	<pointReleaseData/>
 	<metadata>
@@ -13,9 +13,9 @@
 			<revisedBy>Windows User</revisedBy>
 		</userData>
 		<identityInfo>
-			<revision>4</revision>
+			<revision>5</revision>
 			<documentID>42CF0865-4F58-49CC-81A3-A3B8B861EBE6</documentID>
-			<versionID>DB21C6D2-8756-4D54-96EC-BF5F43B1D262</versionID>
+			<versionID>6A25FB76-A46C-4ABA-98CC-0BA8E72A4A14</versionID>
 			<parentVersionID>00000000-0000-0000-0000-000000000000</parentVersionID>
 			<branchID>00000000-0000-0000-0000-000000000000</branchID>
 		</identityInfo>
@@ -107,7 +107,7 @@
 		</editor>
 		<fileFormat image-type="image/png" image-quality="75" save-numeric-results="true" exclude-large-results="true" save-text-images="false" screen-dpi="96"/>
 		<miscellaneous>
-			<handbook handbook-region-tag-ub="178" can-delete-original-handbook-regions="true" can-delete-user-regions="true" can-print="true" can-copy="true" can-save="true" file-permission-mask="4294967295"/>
+			<handbook handbook-region-tag-ub="180" can-delete-original-handbook-regions="true" can-delete-user-regions="true" can-print="true" can-copy="true" can-save="true" file-permission-mask="4294967295"/>
 		</miscellaneous>
 	</settings>
 	<regions>
@@ -130,10 +130,10 @@
 		<region region-id="14" left="18" top="57" width="38.25" height="22.5" align-x="33.75" align-y="72" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 			<math optimize="false" disable-calc="false">
 				<ml:provenance expr-id="1" xmlns:ml="http://schemas.mathsoft.com/math30">
-					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511084" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382097852" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</originRef>
-					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290510924" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382098652" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</parentRef>
 					<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -158,10 +158,10 @@
 		<region region-id="15" left="66" top="57" width="47.25" height="22.5" align-x="84" align-y="72" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 			<math optimize="false" disable-calc="false">
 				<ml:provenance expr-id="1" xmlns:ml="http://schemas.mathsoft.com/math30">
-					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511084" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382097852" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</originRef>
-					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511644" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382098412" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</parentRef>
 					<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -186,10 +186,10 @@
 		<region region-id="16" left="126" top="57" width="45.75" height="22.5" align-x="142.5" align-y="72" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 			<math optimize="false" disable-calc="false">
 				<ml:provenance expr-id="1" xmlns:ml="http://schemas.mathsoft.com/math30">
-					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511324" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382097972" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</originRef>
-					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511084" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382097852" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</parentRef>
 					<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -214,10 +214,10 @@
 		<region region-id="17" left="186" top="57" width="45" height="22.5" align-x="201.75" align-y="72" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 			<math optimize="false" disable-calc="false">
 				<ml:provenance expr-id="1" xmlns:ml="http://schemas.mathsoft.com/math30">
-					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511604" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382098052" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</originRef>
-					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511324" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382097972" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</parentRef>
 					<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -242,10 +242,10 @@
 		<region region-id="18" left="252" top="57" width="48.75" height="22.5" align-x="267.75" align-y="72" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 			<math optimize="false" disable-calc="false">
 				<ml:provenance expr-id="1" xmlns:ml="http://schemas.mathsoft.com/math30">
-					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290510644" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382098492" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</originRef>
-					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511604" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382098052" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</parentRef>
 					<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -270,10 +270,10 @@
 		<region region-id="23" left="312" top="57" width="41.25" height="22.5" align-x="330.75" align-y="72" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 			<math optimize="false" disable-calc="false">
 				<ml:provenance expr-id="1" xmlns:ml="http://schemas.mathsoft.com/math30">
-					<originRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511404" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<originRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382097772" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</originRef>
-					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290510644" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382098492" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</parentRef>
 					<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -298,10 +298,10 @@
 		<region region-id="20" left="18" top="79.5" width="33.75" height="14.25" align-x="27" align-y="90" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 			<math optimize="false" disable-calc="false">
 				<ml:provenance expr-id="1" xmlns:ml="http://schemas.mathsoft.com/math30">
-					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511404" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<originRef doc-id="884FB04F-A53B-4EAC-AC91-E8688C33665F" version-id="85D42E29-874C-4F5D-8F1A-65197BAF7114" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382097772" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\驱动变压器计算\驱动变压器.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</originRef>
-					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="290511244" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+					<parentRef doc-id="A3A946CF-4868-469D-A077-6A9844624170" version-id="32C9C0BC-524F-41CE-B41E-F9DF1914E645" branch-id="00000000-0000-0000-0000-000000000000" revision-num="382097572" is-modified="false" region-id="0" href="E:\李雪岩\项目\22kW光储\AC_flyback\AC反激_v12.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 						<hash/>
 					</parentRef>
 					<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -1321,6 +1321,13 @@
 				</ml:define>
 			</math>
 			<rendering item-idref="56"/>
+		</region>
+		<region region-id="180" left="36" top="1821" width="84" height="11.25" align-x="36" align-y="1830" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+			<text use-page-width="false" push-down="false" lock-width="true">
+				<p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
+					<b>3.6.2 自举电容</b>
+				</p>
+			</text>
 		</region>
 	</regions>
 	<binaryContent>
