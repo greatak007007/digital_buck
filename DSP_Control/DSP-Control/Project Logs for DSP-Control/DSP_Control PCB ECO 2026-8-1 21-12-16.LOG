@@ -1,0 +1,8 @@
+Added Component: Designator=A1(PAD-3.2/6.0)
+Added Component: Designator=A2(PAD-3.2/6.0)
+Added Component: Designator=A3(PAD-3.2/6.0)
+Added Component: Designator=A4(PAD-3.2/6.0)
+Added Member To Class: ClassName=sys-part2 Member=Component A1 PAD-3.2/6.0
+Added Member To Class: ClassName=sys-part2 Member=Component A2 PAD-3.2/6.0
+Added Member To Class: ClassName=sys-part2 Member=Component A3 PAD-3.2/6.0
+Added Member To Class: ClassName=sys-part2 Member=Component A4 PAD-3.2/6.0
