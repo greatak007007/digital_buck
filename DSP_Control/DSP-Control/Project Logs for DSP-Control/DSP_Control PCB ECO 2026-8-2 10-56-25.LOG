@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=Iin_FB Pin=R15-2
+Added Pin To Net: NetName=Iin_FB Pin=R25-2

@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=+3V3 Pin=R11-2
+Removed Pin From Net: NetName=Vin_FB Pin=R14-2
+Added Pin To Net: NetName=Vin_FB Pin=R17-2
+Change Net Name : Old Net Name=Vin_FB New Net Name=ADCINA5/C2
+Added Pin To Net: NetName=NetR14_2 Pin=R14-2
+Added Pin To Net: NetName=NetR14_2 Pin=TP37-1
+Added Net: Name=NetR14_2

@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=I2CA_SCL Pin=U1-38
+Added Pin To Net: NetName=I2CA_SCL Pin=U1-44
+Added Pin To Net: NetName=GPIO33 Pin=LED5-1
+Added Pin To Net: NetName=GPIO33 Pin=TP149-1
+Added Pin To Net: NetName=GPIO33 Pin=U1-38
+Added Net: Name=GPIO33
