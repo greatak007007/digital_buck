@@ -1,7 +1,7 @@
 [
    {
-      "directory" : "C:/Users/Administrator/workspace_ccstheia/gpio_ex2_toggle/CPU1_RAM",
-      "command"   : "clang++ -I\"C:/Users/Administrator/workspace_ccstheia/gpio_ex2_toggle\" -I\"C:/ti/c2000/C2000Ware_26_01_00_00\" -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -DDEBUG -DRAM -Dgeneric_ram_lnk -I\"C:/Users/Administrator/workspace_ccstheia/gpio_ex2_toggle/CPU1_RAM/syscfg\" -xc",
-      "file"      : "C:/Users/Administrator/workspace_ccstheia/gpio_ex2_toggle/gpio_ex2_toggle.c"
+      "directory" : "D:/数字buck/gpio_ex2_toggle/CPU1_RAM",
+      "command"   : "clang++ -I\"D:/数字buck/gpio_ex2_toggle\" -I\"C:/ti/C2000Ware_26_01_00_00\" -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -DDEBUG -DRAM -Dgeneric_ram_lnk -I\"D:/数字buck/gpio_ex2_toggle/CPU1_RAM/syscfg\" -xc",
+      "file"      : "D:/数字buck/gpio_ex2_toggle/gpio_ex2_toggle.c"
    }
 ]
