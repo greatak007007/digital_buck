@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=ADCINA6 Pin=P1-19
+Removed Pin From Net: NetName=Iin_FB Pin=P1-21
+Added Pin To Net: NetName=Iin_FB Pin=P1-19
+Added Pin To Net: NetName=ADCINA6 Pin=P1-21

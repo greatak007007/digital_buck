@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=IL_FB Pin=TP47-1
+Added Pin To Net: NetName=ADCINC6 Pin=TP47-1

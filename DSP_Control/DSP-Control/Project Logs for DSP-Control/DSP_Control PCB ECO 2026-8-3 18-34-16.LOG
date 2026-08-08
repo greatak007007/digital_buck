@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=EPWM-7A Pin=P1-11
+Removed Pin From Net: NetName=EPWM-7B Pin=P1-13
+Added Pin To Net: NetName=EPWM-7B Pin=P1-11
+Added Pin To Net: NetName=EPWM-7A Pin=P1-13

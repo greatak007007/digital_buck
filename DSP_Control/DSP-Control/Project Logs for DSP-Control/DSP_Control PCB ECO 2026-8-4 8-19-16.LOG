@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=SPIB_SIMO Pin=P1-33
+Removed Pin From Net: NetName=SPIB_SOMI Pin=P1-34
+Added Pin To Net: NetName=SPIB_SOMI Pin=P1-33
+Added Pin To Net: NetName=SPIB_SIMO Pin=P1-34

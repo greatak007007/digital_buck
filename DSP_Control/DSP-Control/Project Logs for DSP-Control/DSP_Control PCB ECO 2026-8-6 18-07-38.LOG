@@ -1,0 +1,25 @@
+Removed Pin From Net: NetName=ADCINA15/C7 Pin=P1-25
+Removed Pin From Net: NetName=ADCINA6 Pin=P1-27
+Removed Pin From Net: NetName=GND Pin=P1-28
+Removed Pin From Net: NetName=GPIO12 Pin=P1-29
+Removed Pin From Net: NetName=GPIO13 Pin=P1-30
+Removed Pin From Net: NetName=GPIO11 Pin=P1-31
+Removed Pin From Net: NetName=GPIO6 Pin=P1-32
+Removed Pin From Net: NetName=SPIB_SOMI Pin=P1-33
+Removed Pin From Net: NetName=SPIB_SIMO Pin=P1-34
+Removed Pin From Net: NetName=SPIB_STE Pin=P1-35
+Removed Pin From Net: NetName=SPIB_CLK Pin=P1-36
+Removed Pin From Net: NetName=ADCINA15/C7 Pin=R27-2
+Added Pin To Net: NetName=ADCINA6 Pin=P1-25
+Added Pin To Net: NetName=GPIO12 Pin=P1-27
+Added Pin To Net: NetName=GPIO13 Pin=P1-28
+Added Pin To Net: NetName=GPIO11 Pin=P1-29
+Added Pin To Net: NetName=GPIO6 Pin=P1-30
+Added Pin To Net: NetName=SPIB_SOMI Pin=P1-31
+Added Pin To Net: NetName=SPIB_SIMO Pin=P1-32
+Added Pin To Net: NetName=SPIB_STE Pin=P1-33
+Added Pin To Net: NetName=SPIB_CLK Pin=P1-34
+Change Net Name : Old Net Name=ADCINA15/C7 New Net Name=IL_FB
+Added Pin To Net: NetName=ADCINC6 Pin=R27-2
+Added Net: Name=ADCINC6
+Added Member To Class: ClassName=F280025C_min_sys Member=Component Y2 20M

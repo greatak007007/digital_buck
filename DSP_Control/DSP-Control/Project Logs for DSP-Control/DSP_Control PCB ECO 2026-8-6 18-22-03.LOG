@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=IL_FB Pin=R26-2
+Added Pin To Net: NetName=IL_FB Pin=R27-2
+Added Pin To Net: NetName=IL_FB Pin=TP47-1
+Change Net Name : Old Net Name=IL_FB New Net Name=ADCINC6
