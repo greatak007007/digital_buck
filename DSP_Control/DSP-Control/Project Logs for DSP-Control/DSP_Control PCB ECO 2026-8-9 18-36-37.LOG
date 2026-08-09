@@ -1,0 +1,3 @@
+Added Component: Designator=TP167(TP-1.5)
+Added Pin To Net: NetName=XRSn Pin=TP167-1
+Added Member To Class: ClassName=F280025C_min_sys Member=Component TP167 TEST POINT

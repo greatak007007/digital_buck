@@ -1,0 +1,9 @@
+Added Component: Designator=TP160(TP-1.5)
+Added Component: Designator=TP161(TP-1.5)
+Added Component: Designator=TP162(TP-1.5)
+Added Pin To Net: NetName=VDDIO Pin=TP160-1
+Added Pin To Net: NetName=VDDIO Pin=TP161-1
+Added Pin To Net: NetName=VDDIO Pin=TP162-1
+Added Member To Class: ClassName=F280025C_min_sys Member=Component TP160 TEST POINT
+Added Member To Class: ClassName=F280025C_min_sys Member=Component TP161 TEST POINT
+Added Member To Class: ClassName=F280025C_min_sys Member=Component TP162 TEST POINT

@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=IL_FB Pin=IL_FB-1
+Removed Pin From Net: NetName=Vo_FB Pin=TP111-1
+Removed Pin From Net: NetName=Vin_FB Pin=TP113-1
+Removed Pin From Net: NetName=Iin_FB Pin=TP114-1
+Removed Pin From Net: NetName=Vin Pin=TP116-1
+Removed Member From Class: ClassName=sys-part2 Member=IL_FB
+Removed Member From Class: ClassName=sys-part2 Member=TP111
+Removed Member From Class: ClassName=sys-part2 Member=TP113
+Removed Member From Class: ClassName=sys-part2 Member=TP114
+Removed Member From Class: ClassName=sys-part2 Member=TP116

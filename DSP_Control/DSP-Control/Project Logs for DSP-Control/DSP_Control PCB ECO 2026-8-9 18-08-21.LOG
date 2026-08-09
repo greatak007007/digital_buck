@@ -1,0 +1,9 @@
+Added Component: Designator=TP157(PAD0.8/1.6)
+Added Component: Designator=TP158(PAD0.8/1.6)
+Added Component: Designator=TP159(PAD0.8/1.6)
+Added Pin To Net: NetName=GND Pin=TP157-1
+Added Pin To Net: NetName=GND Pin=TP158-1
+Added Pin To Net: NetName=GND Pin=TP159-1
+Added Member To Class: ClassName=F280025C_min_sys Member=Component TP157 TP-pad0.8
+Added Member To Class: ClassName=F280025C_min_sys Member=Component TP158 TP-pad0.8
+Added Member To Class: ClassName=F280025C_min_sys Member=Component TP159 TP-pad0.8

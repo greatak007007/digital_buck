@@ -1,0 +1,9 @@
+Change Component Footprint: Designator=TP105 Old Footprint=TP-1.5 New Footprint=PAD0.8/1.6
+Change Component Footprint: Designator=TP106 Old Footprint=TP-1.5 New Footprint=PAD0.8/1.6
+Change Component Footprint: Designator=TP107 Old Footprint=TP-1.5 New Footprint=PAD0.8/1.6
+Change Component Footprint: Designator=TP108 Old Footprint=TP-1.5 New Footprint=PAD0.8/1.6
+Change Component Comment : Designator=TP105 Old Comment=TEST POINT New Comment=TP-pad0.8
+Change Component Comment : Designator=TP106 Old Comment=TEST POINT New Comment=TP-pad0.8
+Change Component Comment : Designator=TP107 Old Comment=TEST POINT New Comment=TP-pad0.8
+Change Component Comment : Designator=TP108 Old Comment=TEST POINT New Comment=TP-pad0.8
+Added Member To Class: ClassName=sys-part2 Member=Component TP110 TP-pad0.8

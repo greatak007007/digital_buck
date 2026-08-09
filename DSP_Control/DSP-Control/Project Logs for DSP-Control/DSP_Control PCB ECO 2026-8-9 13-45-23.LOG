@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=TP109 Old Footprint=TP-1.5 New Footprint=PAD0.8/1.6
+Change Component Footprint: Designator=TP110 Old Footprint=TP-1.5 New Footprint=PAD0.8/1.6
+Change Component Comment : Designator=TP109 Old Comment=TEST POINT New Comment=TP-pad0.8
+Change Component Comment : Designator=TP110 Old Comment=TEST POINT New Comment=TP-pad0.8
+Change Component Designator: OldDesignator=+3.3V NewDesignator=TP117
+Change Component Designator: OldDesignator=GND NewDesignator=TP104
+Change Component Designator: OldDesignator=Vin NewDesignator=TP116

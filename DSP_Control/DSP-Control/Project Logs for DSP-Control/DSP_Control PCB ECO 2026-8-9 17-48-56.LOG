@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=SPIA_SIMO Pin=TP122-1
+Removed Pin From Net: NetName=SPIA_SOMI Pin=TP123-1
+Removed Pin From Net: NetName=SPIA_CLK Pin=TP124-1
+Removed Pin From Net: NetName=SPIA_STE Pin=TP125-1
+Added Pin To Net: NetName=SPIB_SIMO Pin=TP122-1
+Added Pin To Net: NetName=SPIB_SOMI Pin=TP123-1
+Added Pin To Net: NetName=SPIB_CLK Pin=TP124-1
+Added Pin To Net: NetName=SPIB_STE Pin=TP125-1
