@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=GPIO18_X2 Pin=TP75-1
+Removed Pin From Net: NetName=GPIO19_X1 Pin=TP76-1
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP75
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP76

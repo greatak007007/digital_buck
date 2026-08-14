@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=VDDIO Pin=TP29-1
+Removed Pin From Net: NetName=GPIO32 Pin=TP30-1
+Removed Pin From Net: NetName=GND Pin=TP32-1
+Change Component Footprint: Designator=TP32 Old Footprint=PAD0.8/1.6 New Footprint=TP-1.5
+Change Component Comment : Designator=TP32 Old Comment=TP-pad0.8 New Comment=TEST POINT
+Added Pin To Net: NetName=NetR83_1 Pin=TP29-1
+Added Pin To Net: NetName=GPIO5 Pin=TP30-1
+Added Pin To Net: NetName=GPIO45 Pin=TP31-1
+Added Pin To Net: NetName=NetR84_1 Pin=TP32-1
