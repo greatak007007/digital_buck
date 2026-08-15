@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=ENABLE Pin=TP71-1
+Removed Pin From Net: NetName=GPIO22 Pin=TP77-1
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP65
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP66
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP67
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP68
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP69
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP70
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP71
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP72
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP73
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP74
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP77

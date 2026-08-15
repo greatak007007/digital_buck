@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=GND Pin=TP6-1
+Removed Pin From Net: NetName=EPWM-1A Pin=TP59-1
+Removed Pin From Net: NetName=GPIO23 Pin=TP78-1
+Removed Member From Class: ClassName=sys-part2 Member=TP6
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP59
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP78
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP79

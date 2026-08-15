@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=EH Pin=USB1-25
+Added Pin To Net: NetName=EH Pin=USB1-26
+Added Pin To Net: NetName=EH Pin=USB1-27
+Added Pin To Net: NetName=EH Pin=USB1-28
+Added Net: Name=EH

@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=GND Pin=TP33-1
+Removed Pin From Net: NetName=GND Pin=TP35-1
+Removed Pin From Net: NetName=VDDIO Pin=TP52-1
+Removed Pin From Net: NetName=GND Pin=TP53-1
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP33
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP35
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP52
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP53

@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=VBUS Pin=TP1-1
+Removed Pin From Net: NetName=+12V Pin=TP2-1
+Removed Pin From Net: NetName=Vin-af Pin=TP3-1
+Removed Pin From Net: NetName=Vin Pin=TP4-1
+Removed Member From Class: ClassName=sys-part2 Member=TP1
+Removed Member From Class: ClassName=sys-part2 Member=TP2
+Removed Member From Class: ClassName=sys-part2 Member=TP3
+Removed Member From Class: ClassName=sys-part2 Member=TP4

@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=MCU_TMS Pin=TP18-1
+Removed Pin From Net: NetName=GPIO35 Pin=TP19-1
+Removed Pin From Net: NetName=GPIO37 Pin=TP20-1
+Removed Pin From Net: NetName=MCU_TCK Pin=TP21-1
+Removed Pin From Net: NetName=GND Pin=TP22-1
+Removed Pin From Net: NetName=+3V3 Pin=TP23-1
+Removed Pin From Net: NetName=XRSn Pin=TP24-1
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP18
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP19
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP20
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP21
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP22
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP23
+Removed Member From Class: ClassName=F280025C_min_sys Member=TP24

@@ -1,0 +1,602 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2026/8/15</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">19:57:04</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc" class="file"><acronym title="F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc">F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">57</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">25</td></tr>
+</table>
+</td>
+</table><a name="IDJQWYDEBM3CZTGWZRHH4JWRXNVFDBCASHEIXMBVID4IAQKZYQBRIB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGVZ3ZOROKKSLJUHTS11LJLHVZOVMPOTUI2NVYEKN3YIY2RGE4RH">Zero hole size multi-layer pad(s) detected</a></td>
+<td class="column2">57</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">57</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID22GCIZ5NW41JNTZ1CSICXBQUDFZ1YM11AKKJMLD1XZT12XAF3NKL">Clearance Constraint (Gap=7.874mil) (All),(All)</a></td>
+<td class="column2">16</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNGWP12UOR3RIIH5QFIKOQVXTBLYIFZKXGK3SADHPADK5MA4WCXDF">Clearance Constraint (Gap=39.37mil) (InNet('EH')),(InNetClass('All Nets'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFBOWSI3OABTWLTZEHNYQKK0JGHWXQ1ILOPRJWTM4RZI1Y10ECYLB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZQI3OKBLTD5NJ2BZSHOSXHVRTPU5ZJ5EPZTVPODCZ4OUQJ3HGCPE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3SXDYXSSHTZBPNJZP1BCPJXD5L2A4QS5LA0ZFGM0KMRMOTSCDPJF">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2B3XTX5GCJJTCFLNBLVERBGP2DTJCN0GRG2QUDEBNHDYLISLRDH">Width Constraint (Min=7.874mil) (Max=393.701mil) (Preferred=7.874mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID32SFV05H2KYMO0JOP3UMSMRRCCGYTPIUARBX2YCP4WOPC1SSWVTF">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDK1HFTOCO3YL0ESGBKX3B14GZMN4MF3PSW5HNDWGDQRXK1NSFAR0L">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDF3A0ZTCSPEUTGI0DKQRDQLTP4HZOD21C3XCHXGGFZXLKITLZ4W1M">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDS2ZA32CDA0UDGYYOZUP4JGK5IMF0T5TVTGJSG4EZCLET421K5NHH">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPR5REYVYEXXNFXU5QKR4N1IV1O5FTDH2RAHVTZP5T4VQ5FC4TANL">Minimum Solder Mask Sliver (Gap=10mil) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTGUDB1YQM5P3DXCTIVWXOSQBDCZRIA02M4RYTQG0FVKA3NHAEKAC">Silk To Solder Mask (Clearance=10mil) (Disabled)(IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5WXGZMLAAQCGMOCMGPIKYNW1PL00QGWOGEK5U2MHTC4DQSWXRY">Silk to Silk (Clearance=10mil) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRAJUZQVL1JDIEVORMT2LIUSLFF1QBQTRSTWYE4CQTWXRRAIQE0DO">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRY33DAWMOWIULA1T0515XZ03RBDUP3R2IUKJDSJVQUSUBZ3VVTJ">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">25</td>
+</tr>
+</table><br><a name="IDO5SNXLD1SALLMMHRU2F4HFMM2B1MU2IQZNIZCBLRMWDJU1IXV0HI"><h2>Warnings</h2></a><a name="IDGVZ3ZOROKKSLJUHTS11LJLHVZOVMPOTUI2NVYEKN3YIY2RGE4RH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Zero hole size multi-layer pad(s) detected</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1968.661mil|Location2.X=2027.716mil|Location1.Y=1094.37mil|Location2.Y=1153.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1968.661mil|Location2.X=2027.716mil|Location1.Y=1094.37mil|Location2.Y=1153.425mil|Absolute=True">Pad TP160-1(1565.118mil,730.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True">Net VDDIO</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1683.661mil|Location2.X=1742.716mil|Location1.Y=574.37mil|Location2.Y=633.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1683.661mil|Location2.X=1742.716mil|Location1.Y=574.37mil|Location2.Y=633.425mil|Absolute=True">Pad TP151-1(1280.118mil,210.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1683.661mil|Location2.X=1948.882mil|Location1.Y=574.37mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1683.661mil|Location2.X=1948.882mil|Location1.Y=574.37mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO44</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1603.661mil|Location2.X=1662.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1603.661mil|Location2.X=1662.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True">Pad TP150-1(1200.118mil,600.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1603.661mil|Location2.X=1929.197mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1603.661mil|Location2.X=1929.197mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO7</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1723.661mil|Location2.X=1782.716mil|Location1.Y=1049.37mil|Location2.Y=1108.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1723.661mil|Location2.X=1782.716mil|Location1.Y=1049.37mil|Location2.Y=1108.425mil|Absolute=True">Pad TP164-1(1320.118mil,685.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.439mil|Location2.X=2475.339mil|Location1.Y=1035.248mil|Location2.Y=2084.248mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.439mil|Location2.X=2475.339mil|Location1.Y=1035.248mil|Location2.Y=2084.248mil|Absolute=True">Net VDD</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1518.661mil|Location2.X=1577.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1518.661mil|Location2.X=1577.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True">Pad TP149-1(1115.118mil,600.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1518.661mil|Location2.X=1909.512mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1518.661mil|Location2.X=1909.512mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO22</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1433.661mil|Location2.X=1492.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1433.661mil|Location2.X=1492.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True">Pad TP148-1(1030.118mil,600.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1433.661mil|Location2.X=1889.827mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1433.661mil|Location2.X=1889.827mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO41</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1348.661mil|Location2.X=1407.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1348.661mil|Location2.X=1407.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True">Pad TP147-1(945.118mil,600.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1348.661mil|Location2.X=1870.142mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1348.661mil|Location2.X=1870.142mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO23</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1263.661mil|Location2.X=1322.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1263.661mil|Location2.X=1322.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True">Pad TP146-1(860.118mil,600.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1263.661mil|Location2.X=1850.457mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1263.661mil|Location2.X=1850.457mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO40</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1093.661mil|Location2.X=1152.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1093.661mil|Location2.X=1152.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True">Pad TP144-1(690.118mil,600.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1093.661mil|Location2.X=1811.087mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1093.661mil|Location2.X=1811.087mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO1</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1093.661mil|Location2.X=1152.716mil|Location1.Y=614.37mil|Location2.Y=673.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1093.661mil|Location2.X=1152.716mil|Location1.Y=614.37mil|Location2.Y=673.425mil|Absolute=True">Pad TP152-1(690.118mil,250.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True">Net VDDIO</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1178.661mil|Location2.X=1237.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1178.661mil|Location2.X=1237.716mil|Location1.Y=964.37mil|Location2.Y=1023.425mil|Absolute=True">Pad TP145-1(775.118mil,600.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1178.661mil|Location2.X=1830.772mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1178.661mil|Location2.X=1830.772mil|Location1.Y=890.198mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO0</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1378.661mil|Location2.X=1437.716mil|Location1.Y=1194.37mil|Location2.Y=1253.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1378.661mil|Location2.X=1437.716mil|Location1.Y=1194.37mil|Location2.Y=1253.425mil|Absolute=True">Pad TP102-1(975.118mil,830.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1327.1mil|Location2.X=1736.283mil|Location1.Y=1194.37mil|Location2.Y=1397.701mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1327.1mil|Location2.X=1736.283mil|Location1.Y=1194.37mil|Location2.Y=1397.701mil|Absolute=True">Net CANA_RX</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1463.661mil|Location2.X=1522.716mil|Location1.Y=1174.37mil|Location2.Y=1233.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1463.661mil|Location2.X=1522.716mil|Location1.Y=1174.37mil|Location2.Y=1233.425mil|Absolute=True">Pad TP103-1(1060.118mil,810.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1327.1mil|Location2.X=1791.401mil|Location1.Y=1141mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1327.1mil|Location2.X=1791.401mil|Location1.Y=1141mil|Location2.Y=1342.583mil|Absolute=True">Net CANA_TX</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1523.661mil|Location2.X=1582.716mil|Location1.Y=1469.37mil|Location2.Y=1528.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1523.661mil|Location2.X=1582.716mil|Location1.Y=1469.37mil|Location2.Y=1528.425mil|Absolute=True">Pad TP10-1(1120.118mil,1105.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.439mil|Location2.X=2475.339mil|Location1.Y=1035.248mil|Location2.Y=2084.248mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.439mil|Location2.X=2475.339mil|Location1.Y=1035.248mil|Location2.Y=2084.248mil|Absolute=True">Net VDD</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=903.662mil|Location2.X=962.716mil|Location1.Y=2354.37mil|Location2.Y=2413.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=903.662mil|Location2.X=962.716mil|Location1.Y=2354.37mil|Location2.Y=2413.425mil|Absolute=True">Pad TP12-1(500.118mil,1990.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=893.739mil|Location2.X=1736.283mil|Location1.Y=1633.795mil|Location2.Y=2603.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=893.739mil|Location2.X=1736.283mil|Location1.Y=1633.795mil|Location2.Y=2603.348mil|Absolute=True">Net MCU_TMS</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1343.661mil|Location2.X=1402.716mil|Location1.Y=2169.37mil|Location2.Y=2228.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1343.661mil|Location2.X=1402.716mil|Location1.Y=2169.37mil|Location2.Y=2228.425mil|Absolute=True">Pad TP161-1(940.118mil,1805.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True">Net VDDIO</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1413.661mil|Location2.X=1472.716mil|Location1.Y=2169.37mil|Location2.Y=2228.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1413.661mil|Location2.X=1472.716mil|Location1.Y=2169.37mil|Location2.Y=2228.425mil|Absolute=True">Pad TP27-1(1010.118mil,1805.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1413.661mil|Location2.X=1791.401mil|Location1.Y=1807.024mil|Location2.Y=2336.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1413.661mil|Location2.X=1791.401mil|Location1.Y=1807.024mil|Location2.Y=2336.348mil|Absolute=True">Net SCIA_RX</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1343.661mil|Location2.X=1402.716mil|Location1.Y=2089.37mil|Location2.Y=2148.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1343.661mil|Location2.X=1402.716mil|Location1.Y=2089.37mil|Location2.Y=2148.425mil|Absolute=True">Pad TP15-1(940.118mil,1725.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1293.739mil|Location2.X=1736.283mil|Location1.Y=1673.165mil|Location2.Y=2603.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1293.739mil|Location2.X=1736.283mil|Location1.Y=1673.165mil|Location2.Y=2603.348mil|Absolute=True">Net MCU_TCK</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2178.543mil|Location2.X=2237.598mil|Location1.Y=1974.173mil|Location2.Y=2033.228mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2178.543mil|Location2.X=2237.598mil|Location1.Y=1974.173mil|Location2.Y=2033.228mil|Absolute=True">Pad TP11-1(1775mil,1610mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2047.181mil|Location2.X=2241.7mil|Location1.Y=1807.024mil|Location2.Y=2100.6mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2047.181mil|Location2.X=2241.7mil|Location1.Y=1807.024mil|Location2.Y=2100.6mil|Absolute=True">Net VDDA</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1153.661mil|Location2.X=1212.716mil|Location1.Y=1919.37mil|Location2.Y=1978.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1153.661mil|Location2.X=1212.716mil|Location1.Y=1919.37mil|Location2.Y=1978.425mil|Absolute=True">Pad TP125-1(750.118mil,1555.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1153.661mil|Location2.X=3613.689mil|Location1.Y=1692.85mil|Location2.Y=2538.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1153.661mil|Location2.X=3613.689mil|Location1.Y=1692.85mil|Location2.Y=2538.898mil|Absolute=True">Net SPIB_STE</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1153.661mil|Location2.X=1212.716mil|Location1.Y=1999.37mil|Location2.Y=2058.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1153.661mil|Location2.X=1212.716mil|Location1.Y=1999.37mil|Location2.Y=2058.425mil|Absolute=True">Pad TP124-1(750.118mil,1635.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1153.661mil|Location2.X=3713.689mil|Location1.Y=1712.535mil|Location2.Y=2521.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1153.661mil|Location2.X=3713.689mil|Location1.Y=1712.535mil|Location2.Y=2521.024mil|Absolute=True">Net SPIB_CLK</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1888.661mil|Location2.X=1947.716mil|Location1.Y=1904.37mil|Location2.Y=1963.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1888.661mil|Location2.X=1947.716mil|Location1.Y=1904.37mil|Location2.Y=1963.425mil|Absolute=True">Pad TP120-1(1485.118mil,1540.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1863.189mil|Location2.X=3613.689mil|Location1.Y=1758.898mil|Location2.Y=2273.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1863.189mil|Location2.X=3613.689mil|Location1.Y=1758.898mil|Location2.Y=2273.898mil|Absolute=True">Net GPIO13</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1793.661mil|Location2.X=1852.716mil|Location1.Y=1919.37mil|Location2.Y=1978.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1793.661mil|Location2.X=1852.716mil|Location1.Y=1919.37mil|Location2.Y=1978.425mil|Absolute=True">Pad TP26-1(1390.118mil,1555.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1535.739mil|Location2.X=1852.716mil|Location1.Y=1807.024mil|Location2.Y=2336.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1535.739mil|Location2.X=1852.716mil|Location1.Y=1807.024mil|Location2.Y=2336.348mil|Absolute=True">Net SCIA_TX</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1613.661mil|Location2.X=1672.716mil|Location1.Y=1934.37mil|Location2.Y=1993.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1613.661mil|Location2.X=1672.716mil|Location1.Y=1934.37mil|Location2.Y=1993.425mil|Absolute=True">Pad TP118-1(1210.118mil,1570.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1613.661mil|Location2.X=3613.689mil|Location1.Y=1721.772mil|Location2.Y=2228.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1613.661mil|Location2.X=3613.689mil|Location1.Y=1721.772mil|Location2.Y=2228.898mil|Absolute=True">Net GPIO11</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1528.661mil|Location2.X=1587.716mil|Location1.Y=1959.37mil|Location2.Y=2018.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1528.661mil|Location2.X=1587.716mil|Location1.Y=1959.37mil|Location2.Y=2018.425mil|Absolute=True">Pad TP122-1(1125.118mil,1595.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1311.063mil|Location2.X=3713.689mil|Location1.Y=1751.906mil|Location2.Y=2485.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1311.063mil|Location2.X=3713.689mil|Location1.Y=1751.906mil|Location2.Y=2485.276mil|Absolute=True">Net SPIB_SIMO</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1448.661mil|Location2.X=1507.716mil|Location1.Y=1959.37mil|Location2.Y=2018.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1448.661mil|Location2.X=1507.716mil|Location1.Y=1959.37mil|Location2.Y=2018.425mil|Absolute=True">Pad TP123-1(1045.118mil,1595.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1293.189mil|Location2.X=3613.689mil|Location1.Y=1732.22mil|Location2.Y=2503.15mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1293.189mil|Location2.X=3613.689mil|Location1.Y=1732.22mil|Location2.Y=2503.15mil|Absolute=True">Net SPIB_SOMI</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1693.661mil|Location2.X=1752.716mil|Location1.Y=1889.37mil|Location2.Y=1948.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1693.661mil|Location2.X=1752.716mil|Location1.Y=1889.37mil|Location2.Y=1948.425mil|Absolute=True">Pad TP119-1(1290.118mil,1525.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1693.661mil|Location2.X=3713.689mil|Location1.Y=1703.898mil|Location2.Y=2208.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1693.661mil|Location2.X=3713.689mil|Location1.Y=1703.898mil|Location2.Y=2208.898mil|Absolute=True">Net GPIO33</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1043.661mil|Location2.X=1102.716mil|Location1.Y=1309.37mil|Location2.Y=1368.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1043.661mil|Location2.X=1102.716mil|Location1.Y=1309.37mil|Location2.Y=1368.425mil|Absolute=True">Pad TP8-1(640.118mil,945.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True">Net VDDIO</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1003.662mil|Location2.X=1062.716mil|Location1.Y=2354.37mil|Location2.Y=2413.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1003.662mil|Location2.X=1062.716mil|Location1.Y=2354.37mil|Location2.Y=2413.425mil|Absolute=True">Pad TP13-1(600.118mil,1990.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=993.739mil|Location2.X=1736.283mil|Location1.Y=1614.11mil|Location2.Y=2603.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=993.739mil|Location2.X=1736.283mil|Location1.Y=1614.11mil|Location2.Y=2603.348mil|Absolute=True">Net GPIO35</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1203.661mil|Location2.X=1262.716mil|Location1.Y=2354.37mil|Location2.Y=2413.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1203.661mil|Location2.X=1262.716mil|Location1.Y=2354.37mil|Location2.Y=2413.425mil|Absolute=True">Pad TP14-1(800.118mil,1990.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1193.739mil|Location2.X=1736.283mil|Location1.Y=1653.48mil|Location2.Y=2603.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1193.739mil|Location2.X=1736.283mil|Location1.Y=1653.48mil|Location2.Y=2603.348mil|Absolute=True">Net GPIO37</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2578.662mil|Location2.X=2637.716mil|Location1.Y=1344.37mil|Location2.Y=1403.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2578.662mil|Location2.X=2637.716mil|Location1.Y=1344.37mil|Location2.Y=1403.425mil|Absolute=True">Pad TP17-1(2175.118mil,980.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.189mil|Location2.X=3613.689mil|Location1.Y=753.398mil|Location2.Y=2652.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.189mil|Location2.X=3613.689mil|Location1.Y=753.398mil|Location2.Y=2652.898mil|Absolute=True">Net +3V3</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2053.662mil|Location2.X=2112.716mil|Location1.Y=434.37mil|Location2.Y=493.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2053.662mil|Location2.X=2112.716mil|Location1.Y=434.37mil|Location2.Y=493.425mil|Absolute=True">Pad TP29-1(1650.118mil,70.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2052.439mil|Location2.X=2183.589mil|Location1.Y=434.37mil|Location2.Y=1018.398mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2052.439mil|Location2.X=2183.589mil|Location1.Y=434.37mil|Location2.Y=1018.398mil|Absolute=True">Net NetR83_1</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2153.662mil|Location2.X=2212.716mil|Location1.Y=1094.37mil|Location2.Y=1153.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2153.662mil|Location2.X=2212.716mil|Location1.Y=1094.37mil|Location2.Y=1153.425mil|Absolute=True">Pad TP30-1(1750.118mil,730.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2027.496mil|Location2.X=2212.716mil|Location1.Y=1044.998mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2027.496mil|Location2.X=2212.716mil|Location1.Y=1044.998mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO5</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1968.661mil|Location2.X=2027.716mil|Location1.Y=1174.37mil|Location2.Y=1233.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1968.661mil|Location2.X=2027.716mil|Location1.Y=1174.37mil|Location2.Y=1233.425mil|Absolute=True">Pad TP31-1(1565.118mil,810.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1968.661mil|Location2.X=2073.589mil|Location1.Y=1041.898mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1968.661mil|Location2.X=2073.589mil|Location1.Y=1041.898mil|Location2.Y=1342.583mil|Absolute=True">Net GPIO45</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1973.661mil|Location2.X=2032.716mil|Location1.Y=434.37mil|Location2.Y=493.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1973.661mil|Location2.X=2032.716mil|Location1.Y=434.37mil|Location2.Y=493.425mil|Absolute=True">Pad TP32-1(1570.118mil,70.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1969.639mil|Location2.X=2073.589mil|Location1.Y=434.37mil|Location2.Y=1021.498mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1969.639mil|Location2.X=2073.589mil|Location1.Y=434.37mil|Location2.Y=1021.498mil|Absolute=True">Net NetR84_1</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2428.662mil|Location2.X=2487.716mil|Location1.Y=1889.37mil|Location2.Y=1948.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2428.662mil|Location2.X=2487.716mil|Location1.Y=1889.37mil|Location2.Y=1948.425mil|Absolute=True">Pad TP34-1(2025.118mil,1525.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2200.724mil|Location2.X=2487.716mil|Location1.Y=1751.906mil|Location2.Y=1948.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2200.724mil|Location2.X=2487.716mil|Location1.Y=1751.906mil|Location2.Y=1948.425mil|Absolute=True">Net NetC24_1</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2513.662mil|Location2.X=2572.716mil|Location1.Y=1014.37mil|Location2.Y=1073.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2513.662mil|Location2.X=2572.716mil|Location1.Y=1014.37mil|Location2.Y=1073.425mil|Absolute=True">Pad TP54-1(2110.118mil,650.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2047.181mil|Location2.X=2579.874mil|Location1.Y=814.85mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2047.181mil|Location2.X=2579.874mil|Location1.Y=814.85mil|Location2.Y=1342.583mil|Absolute=True">Net I2CB_SCL</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2548.662mil|Location2.X=2607.716mil|Location1.Y=1094.37mil|Location2.Y=1153.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2548.662mil|Location2.X=2607.716mil|Location1.Y=1094.37mil|Location2.Y=1153.425mil|Absolute=True">Pad TP55-1(2145.118mil,730.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2086.551mil|Location2.X=2607.716mil|Location1.Y=814.85mil|Location2.Y=1342.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2086.551mil|Location2.X=2607.716mil|Location1.Y=814.85mil|Location2.Y=1342.583mil|Absolute=True">Net I2CB_SDA</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3318.662mil|Location2.X=3377.716mil|Location1.Y=1729.37mil|Location2.Y=1788.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3318.662mil|Location2.X=3377.716mil|Location1.Y=1729.37mil|Location2.Y=1788.425mil|Absolute=True">Pad TP56-1(2915.118mil,1365.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.189mil|Location2.X=3613.689mil|Location1.Y=753.398mil|Location2.Y=2652.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.189mil|Location2.X=3613.689mil|Location1.Y=753.398mil|Location2.Y=2652.898mil|Absolute=True">Net +3V3</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=733.662mil|Location2.X=792.716mil|Location1.Y=1649.37mil|Location2.Y=1708.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=733.662mil|Location2.X=792.716mil|Location1.Y=1649.37mil|Location2.Y=1708.425mil|Absolute=True">Pad TP57-1(330.118mil,1285.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=733.662mil|Location2.X=1736.283mil|Location1.Y=1268.898mil|Location2.Y=1908.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=733.662mil|Location2.X=1736.283mil|Location1.Y=1268.898mil|Location2.Y=1908.898mil|Absolute=True">Net ENABLE</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3413.662mil|Location2.X=3472.716mil|Location1.Y=1159.37mil|Location2.Y=1218.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3413.662mil|Location2.X=3472.716mil|Location1.Y=1159.37mil|Location2.Y=1218.425mil|Absolute=True">Pad TP93-1(3010.118mil,795.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3120.889mil|Location2.X=3472.716mil|Location1.Y=850.548mil|Location2.Y=1419.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3120.889mil|Location2.X=3472.716mil|Location1.Y=850.548mil|Location2.Y=1419.898mil|Absolute=True">Net +12V</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=658.662mil|Location2.X=717.716mil|Location1.Y=1044.37mil|Location2.Y=1103.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=658.662mil|Location2.X=717.716mil|Location1.Y=1044.37mil|Location2.Y=1103.425mil|Absolute=True">Pad TP98-1(255.118mil,680.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=406.8mil|Location2.X=975.1mil|Location1.Y=1044.37mil|Location2.Y=1428.2mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=406.8mil|Location2.X=975.1mil|Location1.Y=1044.37mil|Location2.Y=1428.2mil|Absolute=True">Net CANH</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=628.662mil|Location2.X=687.716mil|Location1.Y=1249.37mil|Location2.Y=1308.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=628.662mil|Location2.X=687.716mil|Location1.Y=1249.37mil|Location2.Y=1308.425mil|Absolute=True">Pad TP99-1(225.118mil,885.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=406.8mil|Location2.X=975.1mil|Location1.Y=1193.6mil|Location2.Y=1578.2mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=406.8mil|Location2.X=975.1mil|Location1.Y=1193.6mil|Location2.Y=1578.2mil|Absolute=True">Net CANL</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2233.662mil|Location2.X=2292.716mil|Location1.Y=974.37mil|Location2.Y=1033.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2233.662mil|Location2.X=2292.716mil|Location1.Y=974.37mil|Location2.Y=1033.425mil|Absolute=True">Pad TP100-1(1830.118mil,610.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True">Net VDDIO</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3473.662mil|Location2.X=3532.716mil|Location1.Y=759.37mil|Location2.Y=818.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3473.662mil|Location2.X=3532.716mil|Location1.Y=759.37mil|Location2.Y=818.425mil|Absolute=True">Pad TP117-1(3070.118mil,395.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.189mil|Location2.X=3613.689mil|Location1.Y=753.398mil|Location2.Y=2652.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.189mil|Location2.X=3613.689mil|Location1.Y=753.398mil|Location2.Y=2652.898mil|Absolute=True">Net +3V3</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=883.662mil|Location2.X=942.716mil|Location1.Y=684.37mil|Location2.Y=743.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=883.662mil|Location2.X=942.716mil|Location1.Y=684.37mil|Location2.Y=743.425mil|Absolute=True">Pad TP127-1(480.118mil,320.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=746.4mil|Location2.X=942.716mil|Location1.Y=684.37mil|Location2.Y=754mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=746.4mil|Location2.X=942.716mil|Location1.Y=684.37mil|Location2.Y=754mil|Absolute=True">Net NetD4_2</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.662mil|Location2.X=2977.716mil|Location1.Y=1169.37mil|Location2.Y=1228.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.662mil|Location2.X=2977.716mil|Location1.Y=1169.37mil|Location2.Y=1228.425mil|Absolute=True">Pad TP128-1(2515.118mil,805.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.662mil|Location2.X=3091.489mil|Location1.Y=1090.298mil|Location2.Y=1228.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2918.662mil|Location2.X=3091.489mil|Location1.Y=1090.298mil|Location2.Y=1228.425mil|Absolute=True">Net NetD3_2</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3448.662mil|Location2.X=3507.716mil|Location1.Y=559.37mil|Location2.Y=618.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3448.662mil|Location2.X=3507.716mil|Location1.Y=559.37mil|Location2.Y=618.425mil|Absolute=True">Pad TP129-1(3045.118mil,195.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2911.039mil|Location2.X=3613.689mil|Location1.Y=559.37mil|Location2.Y=731.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2911.039mil|Location2.X=3613.689mil|Location1.Y=559.37mil|Location2.Y=731.348mil|Absolute=True">Net Vin</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3288.662mil|Location2.X=3347.716mil|Location1.Y=1159.37mil|Location2.Y=1218.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3288.662mil|Location2.X=3347.716mil|Location1.Y=1159.37mil|Location2.Y=1218.425mil|Absolute=True">Pad TP131-1(2885.118mil,795.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2962.839mil|Location2.X=3381.239mil|Location1.Y=927.198mil|Location2.Y=1218.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2962.839mil|Location2.X=3381.239mil|Location1.Y=927.198mil|Location2.Y=1218.425mil|Absolute=True">Net Vin-af</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3008.662mil|Location2.X=3067.716mil|Location1.Y=1264.37mil|Location2.Y=1323.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3008.662mil|Location2.X=3067.716mil|Location1.Y=1264.37mil|Location2.Y=1323.425mil|Absolute=True">Pad TP132-1(2605.118mil,900.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3008.662mil|Location2.X=3124.889mil|Location1.Y=1264.37mil|Location2.Y=1401.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3008.662mil|Location2.X=3124.889mil|Location1.Y=1264.37mil|Location2.Y=1401.548mil|Absolute=True">Net NetC46_2</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2958.662mil|Location2.X=3017.716mil|Location1.Y=1449.37mil|Location2.Y=1508.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2958.662mil|Location2.X=3017.716mil|Location1.Y=1449.37mil|Location2.Y=1508.425mil|Absolute=True">Pad TP133-1(2555.118mil,1085.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2958.662mil|Location2.X=3116.189mil|Location1.Y=1449.37mil|Location2.Y=1610.198mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2958.662mil|Location2.X=3116.189mil|Location1.Y=1449.37mil|Location2.Y=1610.198mil|Absolute=True">Net NetR64_1</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3313.662mil|Location2.X=3372.716mil|Location1.Y=1569.37mil|Location2.Y=1628.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3313.662mil|Location2.X=3372.716mil|Location1.Y=1569.37mil|Location2.Y=1628.425mil|Absolute=True">Pad TP134-1(2910.118mil,1205.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3023.189mil|Location2.X=3372.716mil|Location1.Y=1453.898mil|Location2.Y=1692.198mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3023.189mil|Location2.X=3372.716mil|Location1.Y=1453.898mil|Location2.Y=1692.198mil|Absolute=True">Net NetR65_2</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2938.662mil|Location2.X=2997.716mil|Location1.Y=1744.37mil|Location2.Y=1803.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2938.662mil|Location2.X=2997.716mil|Location1.Y=1744.37mil|Location2.Y=1803.425mil|Absolute=True">Pad TP135-1(2535.118mil,1380.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2929.589mil|Location2.X=2997.716mil|Location1.Y=1618.198mil|Location2.Y=1803.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2929.589mil|Location2.X=2997.716mil|Location1.Y=1618.198mil|Location2.Y=1803.425mil|Absolute=True">Net NetD2_2</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=673.662mil|Location2.X=732.716mil|Location1.Y=644.37mil|Location2.Y=703.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=673.662mil|Location2.X=732.716mil|Location1.Y=644.37mil|Location2.Y=703.425mil|Absolute=True">Pad TP154-1(270.118mil,280.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=582.75mil|Location2.X=882.189mil|Location1.Y=296.798mil|Location2.Y=973.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=582.75mil|Location2.X=882.189mil|Location1.Y=296.798mil|Location2.Y=973.898mil|Absolute=True">Net VBUS</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2318.662mil|Location2.X=2377.716mil|Location1.Y=1484.37mil|Location2.Y=1543.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2318.662mil|Location2.X=2377.716mil|Location1.Y=1484.37mil|Location2.Y=1543.425mil|Absolute=True">Pad TP162-1(1915.118mil,1120.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.65mil|Location2.X=2564mil|Location1.Y=614.37mil|Location2.Y=2336.348mil|Absolute=True">Net VDDIO</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2273.662mil|Location2.X=2332.716mil|Location1.Y=1289.37mil|Location2.Y=1348.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2273.662mil|Location2.X=2332.716mil|Location1.Y=1289.37mil|Location2.Y=1348.425mil|Absolute=True">Pad TP166-1(1870.118mil,925.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.439mil|Location2.X=2475.339mil|Location1.Y=1035.248mil|Location2.Y=2084.248mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.439mil|Location2.X=2475.339mil|Location1.Y=1035.248mil|Location2.Y=2084.248mil|Absolute=True">Net VDD</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2433.662mil|Location2.X=2492.716mil|Location1.Y=1244.37mil|Location2.Y=1303.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2433.662mil|Location2.X=2492.716mil|Location1.Y=1244.37mil|Location2.Y=1303.425mil|Absolute=True">Pad TP167-1(2030.118mil,880.197mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2200.724mil|Location2.X=2678.139mil|Location1.Y=575.498mil|Location2.Y=1476.441mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2200.724mil|Location2.X=2678.139mil|Location1.Y=575.498mil|Location2.Y=1476.441mil|Absolute=True">Net XRSn</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID22GCIZ5NW41JNTZ1CSICXBQUDFZ1YM11AKKJMLD1XZT12XAF3NKL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=7.874mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=998.238mil|Location2.Y=1007.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=998.238mil|Location2.Y=1007.362mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-A1(173.329mil,603.199mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=734.438mil|Location2.Y=743.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=734.438mil|Location2.Y=743.562mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-A12(173.329mil,339.399mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=966.738mil|Location2.Y=975.862mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=966.738mil|Location2.Y=975.862mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-A4(173.329mil,571.699mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=915.538mil|Location2.Y=924.662mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=915.538mil|Location2.Y=924.662mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-A5(173.329mil,520.499mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=876.238mil|Location2.Y=885.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=876.238mil|Location2.Y=885.362mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-A6(173.329mil,481.199mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=856.538mil|Location2.Y=865.662mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=856.538mil|Location2.Y=865.662mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-A7(173.329mil,461.499mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=817.138mil|Location2.Y=826.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=817.138mil|Location2.Y=826.262mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-A8(173.329mil,422.099mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=765.938mil|Location2.Y=775.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=765.938mil|Location2.Y=775.062mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-A9(173.329mil,370.899mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=746.238mil|Location2.Y=755.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=746.238mil|Location2.Y=755.362mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-B1(173.329mil,351.199mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=986.438mil|Location2.Y=995.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=986.438mil|Location2.Y=995.562mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-B12(173.329mil,591.399mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=777.738mil|Location2.Y=786.862mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=777.738mil|Location2.Y=786.862mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-B4(173.329mil,382.699mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=797.438mil|Location2.Y=806.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=797.438mil|Location2.Y=806.562mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-B5(173.329mil,402.399mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=836.838mil|Location2.Y=845.962mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=836.838mil|Location2.Y=845.962mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-B6(173.329mil,441.799mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=895.838mil|Location2.Y=904.962mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=895.838mil|Location2.Y=904.962mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-B7(173.329mil,500.799mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=935.238mil|Location2.Y=944.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=935.238mil|Location2.Y=944.362mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-B8(173.329mil,540.199mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=954.938mil|Location2.Y=964.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=578.713mil|Location2.X=587.837mil|Location1.Y=954.938mil|Location2.Y=964.062mil|Absolute=True">Clearance Constraint: (2.95mil &lt; 7.874mil) Between Pad USB1-B9(173.329mil,559.899mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDZQI3OKBLTD5NJ2BZSHOSXHVRTPU5ZJ5EPZTVPODCZ4OUQJ3HGCPE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=360.35mil|Location2.X=596.55mil|Location1.Y=622.1mil|Location2.Y=665.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=360.35mil|Location2.X=596.55mil|Location1.Y=622.1mil|Location2.Y=665.5mil|Absolute=True">Un-Routed Net Constraint: Net EH Between Pad USB1-26(-29.371mil,250.099mil) on Multi-Layer And Pad USB1-25(128.029mil,250.099mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=525.65mil|Location2.X=596.55mil|Location1.Y=622.1mil|Location2.Y=1108mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=525.65mil|Location2.X=596.55mil|Location1.Y=622.1mil|Location2.Y=1108mil|Absolute=True">Un-Routed Net Constraint: Net EH Between Pad USB1-25(128.029mil,250.099mil) on Multi-Layer And Pad USB1-28(128.029mil,692.599mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=360.35mil|Location2.X=596.55mil|Location1.Y=1064.6mil|Location2.Y=1108mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=360.35mil|Location2.X=596.55mil|Location1.Y=1064.6mil|Location2.Y=1108mil|Absolute=True">Un-Routed Net Constraint: Net EH Between Pad USB1-27(-29.371mil,692.599mil) on Multi-Layer And Pad USB1-28(128.029mil,692.599mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDF3A0ZTCSPEUTGI0DKQRDQLTP4HZOD21C3XCHXGGFZXLKITLZ4W1M"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3914.729mil|Location2.X=4041.964mil|Location1.Y=330.084mil|Location2.Y=457.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3914.729mil|Location2.X=4041.964mil|Location1.Y=330.084mil|Location2.Y=457.318mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad A1-1(3545.276mil,0mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3914.729mil|Location2.X=4041.964mil|Location1.Y=2692.288mil|Location2.Y=2819.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3914.729mil|Location2.X=4041.964mil|Location1.Y=2692.288mil|Location2.Y=2819.523mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad A2-1(3545.276mil,2362.205mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=369.454mil|Location2.X=496.688mil|Location1.Y=2692.288mil|Location2.Y=2819.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=369.454mil|Location2.X=496.688mil|Location1.Y=2692.288mil|Location2.Y=2819.523mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad A3-1(0mil,2362.205mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=369.454mil|Location2.X=496.688mil|Location1.Y=330.084mil|Location2.Y=457.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=369.454mil|Location2.X=496.688mil|Location1.Y=330.084mil|Location2.Y=457.318mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad A4-1(0mil,0mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDRAJUZQVL1JDIEVORMT2LIUSLFF1QBQTRSTWYE4CQTWXRRAIQE0DO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3119.689mil|Location2.X=3165.047mil|Location1.Y=1520.398mil|Location2.Y=1590.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3119.689mil|Location2.X=3165.047mil|Location1.Y=1520.398mil|Location2.Y=1590.876mil|Absolute=True">Net Antennae: Via (2705.118mil,1145.197mil) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\%E6%95%B0%E5%AD%97buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3149.689mil|Location2.X=3195.047mil|Location1.Y=1520.398mil|Location2.Y=1590.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\数字buck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3149.689mil|Location2.X=3195.047mil|Location1.Y=1520.398mil|Location2.Y=1590.876mil|Absolute=True">Net Antennae: Via (2735.118mil,1145.197mil) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

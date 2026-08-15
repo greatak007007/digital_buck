@@ -1,0 +1,138 @@
+Protel Design System Design Rule Check
+PCB File : F:\Êý×Öbuck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc
+Date     : 2026/8/15
+Time     : 19:57:04
+
+WARNING: Zero hole size multi-layer pad(s) detected
+   Pad TP160-1(1565.118mil,730.197mil) on Multi-Layer on Net VDDIO
+   Pad TP151-1(1280.118mil,210.197mil) on Multi-Layer on Net GPIO44
+   Pad TP150-1(1200.118mil,600.197mil) on Multi-Layer on Net GPIO7
+   Pad TP164-1(1320.118mil,685.197mil) on Multi-Layer on Net VDD
+   Pad TP149-1(1115.118mil,600.197mil) on Multi-Layer on Net GPIO22
+   Pad TP148-1(1030.118mil,600.197mil) on Multi-Layer on Net GPIO41
+   Pad TP147-1(945.118mil,600.197mil) on Multi-Layer on Net GPIO23
+   Pad TP146-1(860.118mil,600.197mil) on Multi-Layer on Net GPIO40
+   Pad TP144-1(690.118mil,600.197mil) on Multi-Layer on Net GPIO1
+   Pad TP152-1(690.118mil,250.197mil) on Multi-Layer on Net VDDIO
+   Pad TP145-1(775.118mil,600.197mil) on Multi-Layer on Net GPIO0
+   Pad TP102-1(975.118mil,830.197mil) on Multi-Layer on Net CANA_RX
+   Pad TP103-1(1060.118mil,810.197mil) on Multi-Layer on Net CANA_TX
+   Pad TP10-1(1120.118mil,1105.197mil) on Multi-Layer on Net VDD
+   Pad TP12-1(500.118mil,1990.197mil) on Multi-Layer on Net MCU_TMS
+   Pad TP161-1(940.118mil,1805.197mil) on Multi-Layer on Net VDDIO
+   Pad TP27-1(1010.118mil,1805.197mil) on Multi-Layer on Net SCIA_RX
+   Pad TP15-1(940.118mil,1725.197mil) on Multi-Layer on Net MCU_TCK
+   Pad TP11-1(1775mil,1610mil) on Multi-Layer on Net VDDA
+   Pad TP125-1(750.118mil,1555.197mil) on Multi-Layer on Net SPIB_STE
+   Pad TP124-1(750.118mil,1635.197mil) on Multi-Layer on Net SPIB_CLK
+   Pad TP120-1(1485.118mil,1540.197mil) on Multi-Layer on Net GPIO13
+   Pad TP26-1(1390.118mil,1555.197mil) on Multi-Layer on Net SCIA_TX
+   Pad TP118-1(1210.118mil,1570.197mil) on Multi-Layer on Net GPIO11
+   Pad TP122-1(1125.118mil,1595.197mil) on Multi-Layer on Net SPIB_SIMO
+   Pad TP123-1(1045.118mil,1595.197mil) on Multi-Layer on Net SPIB_SOMI
+   Pad TP119-1(1290.118mil,1525.197mil) on Multi-Layer on Net GPIO33
+   Pad TP8-1(640.118mil,945.197mil) on Multi-Layer on Net VDDIO
+   Pad TP13-1(600.118mil,1990.197mil) on Multi-Layer on Net GPIO35
+   Pad TP14-1(800.118mil,1990.197mil) on Multi-Layer on Net GPIO37
+   Pad TP17-1(2175.118mil,980.197mil) on Multi-Layer on Net +3V3
+   Pad TP29-1(1650.118mil,70.197mil) on Multi-Layer on Net NetR83_1
+   Pad TP30-1(1750.118mil,730.197mil) on Multi-Layer on Net GPIO5
+   Pad TP31-1(1565.118mil,810.197mil) on Multi-Layer on Net GPIO45
+   Pad TP32-1(1570.118mil,70.197mil) on Multi-Layer on Net NetR84_1
+   Pad TP34-1(2025.118mil,1525.197mil) on Multi-Layer on Net NetC24_1
+   Pad TP54-1(2110.118mil,650.197mil) on Multi-Layer on Net I2CB_SCL
+   Pad TP55-1(2145.118mil,730.197mil) on Multi-Layer on Net I2CB_SDA
+   Pad TP56-1(2915.118mil,1365.197mil) on Multi-Layer on Net +3V3
+   Pad TP57-1(330.118mil,1285.197mil) on Multi-Layer on Net ENABLE
+   Pad TP93-1(3010.118mil,795.197mil) on Multi-Layer on Net +12V
+   Pad TP98-1(255.118mil,680.197mil) on Multi-Layer on Net CANH
+   Pad TP99-1(225.118mil,885.197mil) on Multi-Layer on Net CANL
+   Pad TP100-1(1830.118mil,610.197mil) on Multi-Layer on Net VDDIO
+   Pad TP117-1(3070.118mil,395.197mil) on Multi-Layer on Net +3V3
+   Pad TP127-1(480.118mil,320.197mil) on Multi-Layer on Net NetD4_2
+   Pad TP128-1(2515.118mil,805.197mil) on Multi-Layer on Net NetD3_2
+   Pad TP129-1(3045.118mil,195.197mil) on Multi-Layer on Net Vin
+   Pad TP131-1(2885.118mil,795.197mil) on Multi-Layer on Net Vin-af
+   Pad TP132-1(2605.118mil,900.197mil) on Multi-Layer on Net NetC46_2
+   Pad TP133-1(2555.118mil,1085.197mil) on Multi-Layer on Net NetR64_1
+   Pad TP134-1(2910.118mil,1205.197mil) on Multi-Layer on Net NetR65_2
+   Pad TP135-1(2535.118mil,1380.197mil) on Multi-Layer on Net NetD2_2
+   Pad TP154-1(270.118mil,280.197mil) on Multi-Layer on Net VBUS
+   Pad TP162-1(1915.118mil,1120.197mil) on Multi-Layer on Net VDDIO
+   Pad TP166-1(1870.118mil,925.197mil) on Multi-Layer on Net VDD
+   Pad TP167-1(2030.118mil,880.197mil) on Multi-Layer on Net XRSn
+
+Processing Rule : Clearance Constraint (Gap=7.874mil) (All),(All)
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-A1(173.329mil,603.199mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-A12(173.329mil,339.399mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-A4(173.329mil,571.699mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-A5(173.329mil,520.499mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-A6(173.329mil,481.199mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-A7(173.329mil,461.499mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-A8(173.329mil,422.099mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-A9(173.329mil,370.899mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-B1(173.329mil,351.199mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-B12(173.329mil,591.399mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-B4(173.329mil,382.699mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-B5(173.329mil,402.399mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-B6(173.329mil,441.799mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-B7(173.329mil,500.799mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-B8(173.329mil,540.199mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+   Violation between Clearance Constraint: (2.95mil < 7.874mil) Between Pad USB1-B9(173.329mil,559.899mil) on Top Layer And Track (143.729mil,292.199mil)(143.729mil,646.599mil) on Keep-Out Layer 
+Rule Violations :16
+
+Processing Rule : Clearance Constraint (Gap=39.37mil) (InNet('EH')),(InNetClass('All Nets'))
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net EH Between Pad USB1-26(-29.371mil,250.099mil) on Multi-Layer And Pad USB1-25(128.029mil,250.099mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net EH Between Pad USB1-25(128.029mil,250.099mil) on Multi-Layer And Pad USB1-28(128.029mil,692.599mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net EH Between Pad USB1-27(-29.371mil,692.599mil) on Multi-Layer And Pad USB1-28(128.029mil,692.599mil) on Multi-Layer 
+Rule Violations :3
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=7.874mil) (Max=393.701mil) (Preferred=7.874mil) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+   Violation between Hole Size Constraint: (125.984mil > 100mil) Pad A1-1(3545.276mil,0mil) on Multi-Layer Actual Hole Size = 125.984mil
+   Violation between Hole Size Constraint: (125.984mil > 100mil) Pad A2-1(3545.276mil,2362.205mil) on Multi-Layer Actual Hole Size = 125.984mil
+   Violation between Hole Size Constraint: (125.984mil > 100mil) Pad A3-1(0mil,2362.205mil) on Multi-Layer Actual Hole Size = 125.984mil
+   Violation between Hole Size Constraint: (125.984mil > 100mil) Pad A4-1(0mil,0mil) on Multi-Layer Actual Hole Size = 125.984mil
+Rule Violations :4
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=10mil) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+   Violation between Net Antennae: Via (2705.118mil,1145.197mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (2735.118mil,1145.197mil) from Top Layer to Bottom Layer 
+Rule Violations :2
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 25
+Waived Violations : 0
+Time Elapsed        : 00:00:01

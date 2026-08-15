@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=NetLED0_2 Pin=TP136-1
+Removed Pin From Net: NetName=NetLED1_2 Pin=TP137-1
+Removed Pin From Net: NetName=NetLED2_2 Pin=TP138-1
+Removed Pin From Net: NetName=NetLED3_2 Pin=TP139-1
+Removed Pin From Net: NetName=NetLED4_2 Pin=TP140-1
+Removed Pin From Net: NetName=NetLED5_2 Pin=TP141-1
+Removed Pin From Net: NetName=NetLED6_2 Pin=TP142-1
+Removed Pin From Net: NetName=NetLED7_2 Pin=TP143-1
+Removed Member From Class: ClassName=sys-part2 Member=TP136
+Removed Member From Class: ClassName=sys-part2 Member=TP137
+Removed Member From Class: ClassName=sys-part2 Member=TP138
+Removed Member From Class: ClassName=sys-part2 Member=TP139
+Removed Member From Class: ClassName=sys-part2 Member=TP140
+Removed Member From Class: ClassName=sys-part2 Member=TP141
+Removed Member From Class: ClassName=sys-part2 Member=TP142
+Removed Member From Class: ClassName=sys-part2 Member=TP143
