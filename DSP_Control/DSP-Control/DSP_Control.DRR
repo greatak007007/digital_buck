@@ -1,0 +1,22 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: DSP_Control.PcbDoc   2026/8/16  9:35:22
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : DSP_Control-RoundHoles.TXT
+ASCII SlotHoles File : DSP_Control-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.254mm (10mil)                                           Round             173       PTH        595.70mm (23.45inch)
+T2      0.599mm (24mil)                                           Slot              4         PTH        40.88mm (1.61inch)
+T3      0.8mm (31mil)                                             Round             32        PTH        265.93mm (10.47inch)
+T4      1.001mm (39mil)                                           Round             46        PTH        186.91mm (7.36inch)
+T5      1.1mm (43mil)                                             Round             18        PTH        49.99mm (1.97inch)
+T6      1.301mm (51mil)                                           Round             4         PTH        11.43mm (0.45inch)
+T7      1.301mm (51mil)                                           Slot              6         PTH        285.17mm (11.23inch)
+T8      3.2mm (126mil)                                            Round             4         PTH        240.10mm (9.45inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              287
+
+Total Processing Time (hh:mm:ss) : 00:00:00

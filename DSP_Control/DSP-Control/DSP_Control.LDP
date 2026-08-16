@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: F:\Êý×Öbuck\digital_buck\DSP_Control\DSP-Control\DSP_Control.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=dsp_control-roundholes.txt|DrillLayers=gtl,g1,g2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=dsp_control-slotholes.txt|DrillLayers=gtl,g1,g2,gbl
